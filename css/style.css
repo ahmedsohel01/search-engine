@@ -109,6 +109,7 @@ nav ul li.active::after {
   border-radius: 3px;
   box-shadow: 0px 0px 5px #797979;
   transition: all 0.3s;
+  z-index: 1;
 }
 
 .sidebar-content {
@@ -278,6 +279,7 @@ form.search-result {
   left: 0;
   right: 0;
   padding: 15px 0;
+  z-index: 999;
 }
 .footer-menu ul li {
   display: inline-block;
@@ -319,6 +321,7 @@ form.search-result {
 /* Result */
 .header-left {
   display: flex;
+  align-items: center;
 }
 .header-left a {
   display: inline-block;
@@ -414,7 +417,7 @@ form.search-result {
 .news-title {
   font-size: 22px;
   font-weight: 400;
-  color: #000;
+  color: #1a0db3;
   margin-bottom: 8px;
   transition: all 0.3s;
 }
@@ -458,20 +461,96 @@ form.search-result {
   width: 180px;
   height: 100px;
 }
-
 /* Video Page */
+/* Web Area */
+.single-web-area {
+  margin-top: 20px;
+  margin-bottom: 5px;
+  width: 600px;
+}
+.web-title {
+  font-size: 22px;
+  font-weight: 400;
+  color: #1a0db3;
+  margin-bottom: 8px;
+  transition: all 0.3s;
+}
+.single-web:hover .web-title {
+  color: #00b16a;
+  text-decoration: underline;
+}
+.single-web span {
+  display: inline-block;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+/* Web Area */
 /*Responsive*/
-@media (max-width: 767.99px) {
+@media (max-width: 767px) {
+  .header-area {
+    padding-bottom: 0;
+  }
+  .header-content {
+    gap: 15px;
+  }
+  .header-left a {
+    margin-right: 5px;
+  }
+  .nine-dots {
+    padding-bottom: 15px;
+  }
+  .header-left {
+    padding-bottom: 15px;
+  }
+  .result-nav {
+    padding-bottom: 0;
+  }
+  .filter-btn {
+    padding-bottom: 20px;
+  }
+  nav ul li {
+    margin-right: 10px;
+    padding-bottom: 20px;
+  }
+  nav ul li::after {
+    bottom: 0px;
+  }
   form {
     width: 100%;
   }
   .footer-content {
     flex-direction: column;
+    gap: 15px;
+  }
+  .footer-copy {
+    gap: 10px;
+    flex-direction: column;
+    text-align: center;
   }
   .img-row {
     grid-template-columns: repeat(2, 1fr);
   }
   .single-img img {
     width: 350px;
+  }
+  .single-web-area,
+  .single-video,
+  .single-news {
+    width: 100%;
+    padding: 15px;
+  }
+  .video-content-bottom {
+    flex-direction: column;
+  }
+  .video-content-video iframe {
+    width: 100%;
+    height: auto;
+  }
+  .news-content {
+    flex-direction: column-reverse;
+    gap: 15px;
+  }
+  .news-content-img img {
+    width: 100%;
   }
 }
